@@ -63,7 +63,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">누구누구님</span>
+              <span class="hidden-xs"><%= current_user.name %>님</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -77,7 +77,8 @@
                   <a href="#" class="btn btn-default btn-flat">My page</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="/users/sign_out" class="btn btn-default btn-flat" data-method="delete">Sign out</a>
+                  <%= link_to "Sign out", destroy_user_session_path, method:  :delete , data: { confirm: "로그아웃 하시나요?" } %>
                 </div>
               </li>
             </ul>
@@ -103,7 +104,7 @@
           <img src="/assets/thumb.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>누구누구님</p>
+          <p><%= current_user.name %>님</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
