@@ -1,7 +1,15 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  
+  config.action_mailer.default_url_options = { host: 'infou-tree-yhyungs66-1.c9.io', port: 80}
+  
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+        api_key: 'key-a5a3321b282f50b278d9f6d887574c7d',
+        domain: 'sandbox15aa06d4c0014f3cb396d864a9b8b5ce.mailgun.org'
+  }
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.

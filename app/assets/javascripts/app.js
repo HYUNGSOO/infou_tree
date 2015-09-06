@@ -267,11 +267,11 @@ function _init() {
         }
 
         //Fix for the control sidebar height
-        var controlSidebar = $($.AdminLTE.options.controlSidebarOptions.selector);
-        if (typeof controlSidebar !== "undefined") {
-          if (controlSidebar.height() > postSetWidth)
-            $(".content-wrapper, .right-side").css('min-height', controlSidebar.height());
-        }
+        //var controlSidebar = $($.AdminLTE.options.controlSidebarOptions.selector);
+        //if (typeof controlSidebar !== "undefined") {
+        //  if (controlSidebar.height() > postSetWidth)
+        //    $(".content-wrapper, .right-side").css('min-height', controlSidebar.height());
+        //}
 
       }
     },
@@ -773,8 +773,16 @@ function LoadAjaxContent(url){
 $(document).ready(function () {
 
 	var ajax_url = location.hash.replace(/^#/, '');
+	
+	
 	if (ajax_url.length < 1) {
-		ajax_url = '/home/dashboard.html';
+	
+	  //if(user_signed_in){
+		//  ajax_url = '/home/dashboard.html'; //여기에 가장 기본화면 주소링크하면됨
+	  //}
+	  //else {
+	    ajax_url = 'home/dashboard.html';
+	  //}
 	}
 	LoadAjaxContent(ajax_url);
 	$('.sidebar-menu').on('click', 'a', function (e) {
