@@ -1,5 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.web_console.whitelisted_ips = '147.47.192.94'
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   
